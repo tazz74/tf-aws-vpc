@@ -1,4 +1,4 @@
-o_provider "aws" {
+provider "aws" {
   region  = "eu-central-1"
 }
 resource "aws_vpc" "vpc" {
