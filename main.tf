@@ -27,6 +27,9 @@ resource "aws_subnet" "demo_public" {
   cidr_block              = element(var.subnet_cidr_pub, count.index)
   map_public_ip_on_launch = true
   availability_zone       = element(data.aws_availability_zones.available.names, count.index)
+  tags = {
+    Name = "Public"
+  }
 }
 
 resource "aws_subnet" "demo_private" {
@@ -35,6 +38,9 @@ resource "aws_subnet" "demo_private" {
   cidr_block              = element(var.subnet_cidr_priv, count.index)
   map_public_ip_on_launch = false
   availability_zone       = element(data.aws_availability_zones.available.names, count.index)
+  tags = {
+    Name = "Private"
+  }
 }
 
 resource "aws_security_group" "weg_sg" {
