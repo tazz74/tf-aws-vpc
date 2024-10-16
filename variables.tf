@@ -6,7 +6,7 @@ variable "vpc_name" {
   default     = "development-vpc"
 }
 
-variable "vpc_cidr_pub" {
+variable "vpc_cidr" {
   description = "Public CIDR block for VPC"
   type        = string
   default     = "10.10.0.0/16"
@@ -16,12 +16,6 @@ variable "subnet_cidr_pub" {
   description = "CIDR blocks for Public subnets"
   default = ["10.10.100.0/24", "10.10.150.0/24", "10.10.200.0/24"]
   type = list
-}
-
-variable "vpc_cidr_priv" {
-  description = "Private CIDR block for VPC"
-  type        = string
-  default     = "10.20.0.0/16"
 }
 
 variable "subnet_cidr_priv" {
