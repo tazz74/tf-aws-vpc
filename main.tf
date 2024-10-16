@@ -16,7 +16,7 @@ resource "aws_internet_gateway" "demo_gateway" {
 resource "aws_route" "demo_route_table" {
   route_table_id         = aws_vpc.vpc.main_route_table_id
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.gateway.id
+  gateway_id             = aws_internet_gateway.demo_gateway.id
 }
 
 data "aws_availability_zones" "available" {}
