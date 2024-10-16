@@ -30,7 +30,7 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_security_group" "default" {
-  name        = "http-https-allow"
+  name        = "web_sg
   description = "Allow incoming HTTP/HTTPS connections"
   vpc_id      = aws_vpc.vpc.id
   ingress {
