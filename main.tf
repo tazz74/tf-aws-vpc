@@ -1,5 +1,4 @@
 provider "aws" {
-  version = "5.71.0"
   region  = "eu-central-1"
 }
 resource "aws_vpc" "vpc" {
