@@ -43,7 +43,7 @@ resource "aws_subnet" "demo_private" {
   }
 }
 
-resource "aws_security_group" "weg_sg" {
+resource "aws_security_group" "web_sg" {
   name        = "http-https-allow"
   description = "Allow incoming HTTP/HTTPS connections"
   vpc_id      = aws_vpc.vpc.id
@@ -58,5 +58,8 @@ resource "aws_security_group" "weg_sg" {
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "web_sg"
   }
 }
