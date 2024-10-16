@@ -2,7 +2,8 @@ o_provider "aws" {
   region  = "eu-central-1"
 }
 resource "aws_vpc" "vpc" {
-  cidr_block = var.vpc_cidr
+  cidr_block = var.vpc_cidr_pub
+  cidr_block = var.vpc_cidr_priv
 
   tags = {
     Name = var.vpc_name
@@ -37,7 +38,7 @@ resource "aws_subnet" "demo_private" {
   availability_zone       = element(data.aws_availability_zones.available.names, count.index)
 }
 
-resource "aws_security_group" "default" {
+resource "aws_security_group" "weg_sg" {
   name        = "http-https-allow"
   description = "Allow incoming HTTP/HTTPS connections"
   vpc_id      = aws_vpc.vpc.id
