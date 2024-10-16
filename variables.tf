@@ -14,6 +14,6 @@ variable "vpc_cidr" {
 
 variable "subnet_cidr" {
   description = "CIDR blocks for Subnet"
-  default = ["10.10.100.0/24", "10.10.200.0/24", "10.10.300.0/24"]
+  default = ["10.10.100.0/24", "10.10.150.0/24", "10.10.200.0/24"]
   type = list
 }
